@@ -6,6 +6,7 @@ Release:	1
 License:	GPL (?)
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/phpbt/%{name}-%{version}.tar.gz
+# Source0-md5:	c4996c25a7bda0a8d0e833d96cad9151
 URL:		http://phpbt.sourceforge.net/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
