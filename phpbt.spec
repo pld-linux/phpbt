@@ -41,14 +41,14 @@ b³êdów przez WWW.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/home/httpd/html/phpbt
+install -d $RPM_BUILD_ROOT/home/services/httpd/html/phpbt
 
-cp -R * $RPM_BUILD_ROOT/home/httpd/html/phpbt
+cp -R * $RPM_BUILD_ROOT/home/services/httpd/html/phpbt
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%dir /home/httpd/html/phpbt
-/home/httpd/html/phpbt/*
+%dir /home/services/httpd/html/phpbt
+/home/services/httpd/html/phpbt/*
