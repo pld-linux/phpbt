@@ -1,4 +1,5 @@
 Summary:	phpBugTracker is meant to be a replacement for Bugzilla
+Summary(pl):	phpBugTracker - maj±cy byæ zamiennikiem dla Bugzilli
 Name:		phpbt
 Version:	0.1.6
 Release:	1
@@ -24,12 +25,24 @@ bugzilla. Those frustrations inspired my design goals:
 So this project will hopefully become a portable and powerful
 web-based bug tracking solution.
 
+%description -l pl
+phpBugTracker ma byæ zamiennikiem dla Bugzilli. Jeszcze nim nie jest,
+ale autor nad tym pracuje. Projekt wyrós³ z frustracji, które
+prze¿ywa³ autor próbuj±c u¿ywaæ Bugzilli. Frustracje te wyznaczy³y
+cele:
+- prostota instalacji i u¿ywania
+- u¿ywanie wzorców by uniezale¿niæ wygl±d
+- u¿ywanie warstwy abstrakcji baz danych by uniezale¿niæ od konkretnej
+  bazy.
+
+Projekt ma siê staæ przeno¶nym i u¿ytecznym rozwi±zaniem ¶ledzenia
+b³êdów przez WWW.
+
 %prep
 %setup -q
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT/home/httpd/html/phpbt
 
 cp -R * $RPM_BUILD_ROOT/home/httpd/html/phpbt
@@ -40,4 +53,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %dir /home/httpd/html/phpbt
-%attr(644,root,root) /home/httpd/html/phpbt/*
+/home/httpd/html/phpbt/*
