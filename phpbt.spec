@@ -7,9 +7,12 @@ License:	GPL (?)
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/phpbt/%{name}-%{version}.tar.gz
 # Source0-md5:	5b9bc72ba1f79a78a48ddd042272f3eb
+Source1:        %{name}.conf
 URL:		http://phpbt.sourceforge.net/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define         _phpbtdir      %{_datadir}/%{name}
 
 %description
 phpBugTracker is meant to be a replacement for Bugzilla (one day).
@@ -42,14 +45,42 @@ b³êdów przez WWW.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/home/services/httpd/html/phpbt
+install -d $RPM_BUILD_ROOT{%{_phpbtdir},/etc/httpd} 
 
-cp -R * $RPM_BUILD_ROOT/home/services/httpd/html/phpbt
+cp -R * $RPM_BUILD_ROOT%{_phpbtdir}
+
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/httpd/%{name}.conf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+if [ -f /etc/httpd/httpd.conf ] && ! grep -q "^Include.*%{name}.conf" /etc/httpd/httpd.conf; then
+        echo "Include /etc/httpd/%{name}.conf" >> /etc/httpd/httpd.conf
+elif [ -d /etc/httpd/httpd.conf ]; then
+        ln -sf /etc/httpd/%{name}.conf /etc/httpd/httpd.conf/99_%{name}.conf
+fi
+if [ -f /var/lock/subsys/httpd ]; then
+        /usr/sbin/apachectl restart 1>&2
+fi
+
+%preun
+if [ "$1" = "0" ]; then
+        umask 027
+        if [ -d /etc/httpd/httpd.conf ]; then
+                rm -f /etc/httpd/httpd.conf/99_%{name}.conf
+        else
+                grep -v "^Include.*%{name}.conf" /etc/httpd/httpd.conf > \
+                        /etc/httpd/httpd.conf.tmp
+                mv -f /etc/httpd/httpd.conf.tmp /etc/httpd/httpd.conf
+                if [ -f /var/lock/subsys/httpd ]; then
+                        /usr/sbin/apachectl restart 1>&2
+                fi
+        fi
+fi
+
 %files
 %defattr(644,root,root,755)
-%dir /home/services/httpd/html/phpbt
-/home/services/httpd/html/phpbt/*
+%doc docs/* CHANGELOG COPYING INSTALL README TODO UPGRADING
+%dir %{_phpbtdir}
+%{_phpbtdir}/*
