@@ -10,6 +10,7 @@ Group(fr):	Development/Outils
 Group(pl):	Programowanie/Narzêdzia
 Source0:	http://prdownloads.sourceforge.net/phpbt/%{name}-%{version}.tar.gz
 URL:		http://phpbt.sourceforge.net/
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
