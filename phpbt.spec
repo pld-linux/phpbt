@@ -5,7 +5,7 @@ Version:	0.5.1
 Release:	1
 License:	GPL (?)
 Group:		Development/Tools
-Source0:	http://prdownloads.sourceforge.net/phpbt/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/phpbt/%{name}-%{version}.tar.gz
 URL:		http://phpbt.sourceforge.net/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
