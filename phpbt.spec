@@ -30,8 +30,14 @@ web-based bug tracking solution.
 %install
 rm -rf $RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT/home/httpd/html/phpbt
+
+cp -R * $RPM_BUILD_ROOT/home/httpd/html/phpbt
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%dir /home/httpd/html/phpbt
+%attr(644,root,root) /home/httpd/html/phpbt/*
