@@ -5,9 +5,6 @@ Version:	0.5.1
 Release:	1
 License:	GPL (?)
 Group:		Development/Tools
-Group(de):	Entwicklung/Werkzeuge
-Group(fr):	Development/Outils
-Group(pl):	Programowanie/Narzêdzia
 Source0:	http://prdownloads.sourceforge.net/phpbt/%{name}-%{version}.tar.gz
 URL:		http://phpbt.sourceforge.net/
 BuildArch:	noarch
