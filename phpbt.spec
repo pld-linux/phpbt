@@ -2,6 +2,7 @@ Summary:	phpBugTracker is meant to be a replacement for Bugzilla
 Name:		phpbt
 Version:	0.1.6
 Release:	1
+License:	GPL (?)
 Group:		Development/Tools
 Group(de):	Entwicklung/Werkzeuge
 Group(fr):	Development/Outils
