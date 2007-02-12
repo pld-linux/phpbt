@@ -1,6 +1,6 @@
 # TODO: webapps
 Summary:	phpBugTracker is meant to be a replacement for Bugzilla
-Summary(pl):	phpBugTracker - maj±cy byæ zamiennikiem dla Bugzilli
+Summary(pl.UTF-8):   phpBugTracker - majÄ…cy byÄ‡ zamiennikiem dla Bugzilli
 Name:		phpbt
 Version:	0.9.1
 Release:	1
@@ -28,18 +28,18 @@ bugzilla. Those frustrations inspired my design goals:
 So this project will hopefully become a portable and powerful
 web-based bug tracking solution.
 
-%description -l pl
-phpBugTracker ma byæ zamiennikiem dla Bugzilli. Jeszcze nim nie jest,
-ale autor nad tym pracuje. Projekt wyrós³ z frustracji, które
-prze¿ywa³ autor próbuj±c u¿ywaæ Bugzilli. Frustracje te wyznaczy³y
+%description -l pl.UTF-8
+phpBugTracker ma byÄ‡ zamiennikiem dla Bugzilli. Jeszcze nim nie jest,
+ale autor nad tym pracuje. Projekt wyrÃ³sÅ‚ z frustracji, ktÃ³re
+przeÅ¼ywaÅ‚ autor prÃ³bujÄ…c uÅ¼ywaÄ‡ Bugzilli. Frustracje te wyznaczyÅ‚y
 cele:
-- prostota instalacji i u¿ywania
-- u¿ywanie wzorców by uniezale¿niæ wygl±d
-- u¿ywanie warstwy abstrakcji baz danych by uniezale¿niæ od konkretnej
+- prostota instalacji i uÅ¼ywania
+- uÅ¼ywanie wzorcÃ³w by uniezaleÅ¼niÄ‡ wyglÄ…d
+- uÅ¼ywanie warstwy abstrakcji baz danych by uniezaleÅ¼niÄ‡ od konkretnej
   bazy.
 
-Projekt ma siê staæ przeno¶nym i u¿ytecznym rozwi±zaniem ¶ledzenia
-b³êdów przez WWW.
+Projekt ma siÄ™ staÄ‡ przenoÅ›nym i uÅ¼ytecznym rozwiÄ…zaniem Å›ledzenia
+bÅ‚Ä™dÃ³w przez WWW.
 
 %prep
 %setup -q
