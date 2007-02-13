@@ -1,6 +1,6 @@
 # TODO: webapps
 Summary:	phpBugTracker is meant to be a replacement for Bugzilla
-Summary(pl.UTF-8):   phpBugTracker - mający być zamiennikiem dla Bugzilli
+Summary(pl.UTF-8):	phpBugTracker - mający być zamiennikiem dla Bugzilli
 Name:		phpbt
 Version:	0.9.1
 Release:	1
